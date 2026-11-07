@@ -185,7 +185,7 @@
 							"value": "@activity('Read Table Details').output.firstRow.silver_table_name",
 							"type": "Expression"
 						},
-						"merge_keys": {
+						"merge_key": {
 							"value": "@coalesce(activity('Read Table Details').output.firstRow.merge_keys,'')",
 							"type": "Expression"
 						},
@@ -373,7 +373,7 @@
 			},
 			"adf_run_id": {
 				"type": "string",
-				"defaultValue": "a1"
+				"defaultValue": "a4"
 			}
 		},
 		"variables": {
