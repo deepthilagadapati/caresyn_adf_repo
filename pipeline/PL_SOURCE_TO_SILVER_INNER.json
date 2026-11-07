@@ -376,7 +376,7 @@
 											"parameters": {
 												"container": "landing-caresync",
 												"folder": {
-													"value": "@concat(\n    activity('Read table details').output.firstRow.source_system,\n    '/',\n    activity('Read table details').output.firstRow.source_table_name,\n    '/',\n    variables('start_time')\n)",
+													"value": "concat(\n    activity('Read table details').output.firstRow.source_system,\n    '/',\n    activity('Read table details').output.firstRow.source_table_name,\n    '/',\n    variables('start_time')\n)",
 													"type": "Expression"
 												}
 											}
@@ -433,7 +433,7 @@
 													"value": "@activity('Read Table Details').output.firstRow.source_path",
 													"type": "Expression"
 												},
-												"container": "source-caresync"
+												"container": "source-caresyn"
 											}
 										}
 									],
