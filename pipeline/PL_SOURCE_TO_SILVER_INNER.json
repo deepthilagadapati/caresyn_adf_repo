@@ -138,7 +138,7 @@
 				}
 			},
 			{
-				"name": "Insert in progress",
+				"name": "success update",
 				"type": "Script",
 				"dependsOn": [
 					{
