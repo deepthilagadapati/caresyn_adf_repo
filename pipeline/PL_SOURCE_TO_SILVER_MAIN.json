@@ -84,7 +84,7 @@
 							"type": "Script",
 							"dependsOn": [
 								{
-									"activity": "Silver to Gold",
+									"activity": "Execute Pipeline1",
 									"dependencyConditions": [
 										"Failed"
 									]
@@ -116,8 +116,8 @@
 							}
 						},
 						{
-							"name": "Silver to Gold",
-							"type": "DatabricksNotebook",
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
 							"dependsOn": [
 								{
 									"activity": "Insert in progress",
@@ -127,22 +127,25 @@
 								}
 							],
 							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"notebookPath": {
-									"value": "/caresync-repo/caresyn_adb_repo/Gold/NB_@{item().gold_table_name}",
-									"type": "Expression"
+								"pipeline": {
+									"referenceName": "PL_SOURCE_TO_SILVER_INNER",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"table_id": {
+										"value": "@item().table_id",
+										"type": "Expression"
+									},
+									"adf_run_id": {
+										"value": "@item().adf_run_id",
+										"type": "Expression"
+									}
 								}
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureDatabricks1",
-								"type": "LinkedServiceReference"
 							}
 						}
 					]
