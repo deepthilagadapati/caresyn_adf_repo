@@ -376,7 +376,7 @@
 											"parameters": {
 												"container": "landing-caresync",
 												"folder": {
-													"value": "concat(\n    activity('Read table details').output.firstRow.source_system,\n    '/',\n    activity('Read table details').output.firstRow.source_table_name,\n    '/',\n    variables('start_time')\n)",
+													"value": "@concat(\n    activity('Read table details').output.firstRow.source_system,\n    '/',\n    activity('Read table details').output.firstRow.source_table_name,\n    '/',\n    variables('start_time')\n)",
 													"type": "Expression"
 												}
 											}
@@ -386,7 +386,7 @@
 							]
 						},
 						{
-							"value": "adls.csv",
+							"value": "adls_csv",
 							"activities": [
 								{
 									"name": "ingest csv from source to landing",
