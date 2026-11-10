@@ -1,0 +1,12 @@
+{
+	"name": "adf-azure-project-deepthi",
+	"properties": {
+		"globalParameters": {
+			"email_receipent": {
+				"type": "string",
+				"value": "Deepthilagadapati05@gmail.com"
+			}
+		}
+	},
+	"location": "eastus"
+}
